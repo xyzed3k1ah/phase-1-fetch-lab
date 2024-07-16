@@ -1,6 +1,13 @@
 function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
-  
+  // Replace 'https://example.com/api/books' with the actual API url
+  const url = "https://anapioficeandfire.com/api/books";
+
+  return fetch(url)
+    .then(response => response.json()) // Parse the response as JSON
+    .then(books => {
+      renderBooks(books); // Call the renderBooks function with fetched books
+    })
+    .catch(error => console.error(error)); // Handle any errors during fetching
 }
 
 function renderBooks(books) {
